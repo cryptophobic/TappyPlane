@@ -1,8 +1,12 @@
 extends CharacterBody2D
 
+class_name Tappy
+
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 var _gravity: float = ProjectSettings.get("physics/2d/default_gravity")
+
+var score: int = 0
 
 var _jumped: bool = false
 const JUMP_POWER = -350.0
@@ -16,8 +20,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		_jumped = true
 		
 func die() -> void:
-	set_physics_process(false)
-	animated_sprite_2d.stop()
+	get_tree().paused = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -30,3 +33,4 @@ func _physics_process(delta: float) -> void:
 	
 	if is_on_floor():
 		die()
+		
