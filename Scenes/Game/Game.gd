@@ -23,10 +23,5 @@ func spawn_pipes() -> void:
 	new_pipes.position = Vector2(upper_spawn.position.x, y_pos)
 	pipes_holder.add_child(new_pipes)
 
-
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel"):
-		GameManager.load_main_scene()
-
 func _on_spawn_timer_timeout() -> void:
 	spawn_pipes()
