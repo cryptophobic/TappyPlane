@@ -1,10 +1,26 @@
-[gd_scene load_steps=9 format=3 uid="uid://ywnkkgwca87a"]
+[gd_scene load_steps=10 format=3 uid="uid://ywnkkgwca87a"]
 
 [ext_resource type="Texture2D" uid="uid://dp4emrfhpjalw" path="res://Assets/background/sky.png" id="1_i3fi7"]
+[ext_resource type="Script" uid="uid://cl365qb2i3b16" path="res://Scenes/Main/Main.gd" id="1_w20t6"]
 [ext_resource type="LabelSettings" uid="uid://drr0cxi6776mg" path="res://Resources/RedLabel96.tres" id="2_o8wgc"]
 [ext_resource type="LabelSettings" uid="uid://ro0r3s12m3a4" path="res://Resources/RedLabel24.tres" id="3_w20t6"]
 [ext_resource type="LabelSettings" uid="uid://bp66rlmhjtjw5" path="res://Resources/RedLabel48.tres" id="4_aw1lf"]
 [ext_resource type="AudioStream" uid="uid://dak7y2fxgtt30" path="res://Assets/audio/bgm_menu.mp3" id="5_o8wgc"]
+
+[sub_resource type="Animation" id="Animation_w20t6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MC/PresSpaceLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_o8wgc"]
 resource_name = "flash"
@@ -23,21 +39,6 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_w20t6"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MC/PresSpaceLabel:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_aw1lf"]
 _data = {
 &"RESET": SubResource("Animation_w20t6"),
@@ -51,6 +52,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_w20t6")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1

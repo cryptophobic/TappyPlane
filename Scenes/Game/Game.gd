@@ -3,6 +3,7 @@ extends Node
 class_name Game
 
 const PIPES = preload("res://Scenes/Pipes/Pipes.tscn")
+const MAIN = preload("res://Scenes/Main/Main.tscn")
 
 @onready var pipes_holder: Node = $PipesHolder
 @onready var upper_spawn: Marker2D = $UpperSpawn
@@ -22,6 +23,11 @@ func spawn_pipes() -> void:
 	
 	new_pipes.position = Vector2(upper_spawn.position.x, y_pos)
 	pipes_holder.add_child(new_pipes)
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().change_scene_to_packed(MAIN)
 
 
 func _on_spawn_timer_timeout() -> void:
