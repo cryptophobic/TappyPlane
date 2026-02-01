@@ -3,7 +3,6 @@ extends Node
 class_name Game
 
 const PIPES = preload("res://Scenes/Pipes/Pipes.tscn")
-const MAIN = preload("res://Scenes/Main/Main.tscn")
 
 @onready var pipes_holder: Node = $PipesHolder
 @onready var upper_spawn: Marker2D = $UpperSpawn
@@ -27,8 +26,7 @@ func spawn_pipes() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
-		get_tree().change_scene_to_packed(MAIN)
-
+		GameManager.load_main_scene()
 
 func _on_spawn_timer_timeout() -> void:
 	spawn_pipes()

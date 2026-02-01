@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjkxvwkcek0fv"]
+
+[ext_resource type="LabelSettings" uid="uid://cppy3fneky8rt" path="res://Resources/RedLabel32.tres" id="1_diq3n"]
+[ext_resource type="LabelSettings" uid="uid://sgedy70hieva" path="res://Resources/RedLabel48Red.tres" id="2_556m7"]
+
+[node name="GameUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "000"
+label_settings = ExtResource("1_diq3n")
+
+[node name="GameOverLabel" type="Label" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Game Over"
+label_settings = ExtResource("2_556m7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PressSpaceLabel" type="Label" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Press Space"
+label_settings = ExtResource("2_556m7")
+horizontal_alignment = 1
+vertical_alignment = 1
