@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ywnkkgwca87a"]
+[gd_scene format=3 uid="uid://ywnkkgwca87a"]
 
 [ext_resource type="Texture2D" uid="uid://dp4emrfhpjalw" path="res://Assets/background/sky.png" id="1_i3fi7"]
 [ext_resource type="Script" uid="uid://cl365qb2i3b16" path="res://Scenes/Main/Main.gd" id="1_w20t6"]
@@ -45,7 +45,7 @@ _data = {
 &"flash": SubResource("Animation_o8wgc")
 }
 
-[node name="Main" type="Control"]
+[node name="Main" type="Control" unique_id=828115686]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -54,7 +54,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_w20t6")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1141385172]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -64,7 +64,7 @@ grow_vertical = 2
 texture = ExtResource("1_i3fi7")
 expand_mode = 1
 
-[node name="MC" type="MarginContainer" parent="."]
+[node name="MC" type="MarginContainer" parent="." unique_id=1665487105]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -76,7 +76,7 @@ theme_override_constants/margin_top = 64
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
 
-[node name="Label" type="Label" parent="MC"]
+[node name="Label" type="Label" parent="MC" unique_id=181033051]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -86,7 +86,7 @@ label_settings = ExtResource("2_o8wgc")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="MC"]
+[node name="Label2" type="Label" parent="MC" unique_id=1934183386]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
@@ -94,7 +94,7 @@ text = "High Score"
 label_settings = ExtResource("3_w20t6")
 vertical_alignment = 1
 
-[node name="HighScoreLabel" type="Label" parent="MC"]
+[node name="HighScoreLabel" type="Label" parent="MC" unique_id=1283800928]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
@@ -103,7 +103,7 @@ label_settings = ExtResource("3_w20t6")
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="PresSpaceLabel" type="Label" parent="MC"]
+[node name="PresSpaceLabel" type="Label" parent="MC" unique_id=1805995774]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Press Space
@@ -112,14 +112,12 @@ label_settings = ExtResource("4_aw1lf")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Music" type="AudioStreamPlayer" parent="."]
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1354706708]
 stream = ExtResource("5_o8wgc")
 volume_db = -40.0
 autoplay = true
 parameters/looping = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_aw1lf")
-}
-autoplay = "flash"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1629548123]
+libraries/ = SubResource("AnimationLibrary_aw1lf")
+autoplay = &"flash"

@@ -31,6 +31,9 @@ func update_score_label() -> void:
 	
 func on_point_scored() -> void:
 	_points += 1
+	ScoreManager.score = _points
+	if _points % 10 == 0:
+		SignalHub.emit_on_speed_increase()
 	update_score_label()
 
 func on_plane_died() -> void:

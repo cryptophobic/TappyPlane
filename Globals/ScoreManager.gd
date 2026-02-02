@@ -2,6 +2,8 @@ extends Node
 
 const SCORES_PATH: String = "user://tappyscore.tres"
 
+var score: int = 0
+
 var high_score: int = 0:
 	get:
 		return high_score
